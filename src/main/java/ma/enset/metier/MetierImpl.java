@@ -2,18 +2,16 @@ package ma.enset.metier;
 
 import ma.enset.dao.IDao;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import org.springframework.beans.factory.annotation.Qualifier;
 
-@Repository("metier")
+import org.springframework.stereotype.Service;
+
+@Service("metier")
 public class MetierImpl implements IMetier {
-    @Autowired
     private IDao dao;
 
-    public MetierImpl(IDao dao) {
+    public MetierImpl(@Qualifier("d2") IDao dao) {
         this.dao = dao;
-    }
-
-    public MetierImpl() {
     }
 
     @Override
