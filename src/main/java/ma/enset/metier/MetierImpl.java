@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 public class MetierImpl implements IMetier {
     private IDao dao;
 
-    public MetierImpl(@Qualifier("d2") IDao dao) {
+    public MetierImpl(@Qualifier("d") IDao dao) {
         this.dao = dao;
     }
 
